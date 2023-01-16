@@ -1,0 +1,12 @@
+1) Rules
+Z Y D
+Y X B E
+X A
+L C
+N L M
+
+2) Facts
+A B C D E
+
+3) Goal
+Z

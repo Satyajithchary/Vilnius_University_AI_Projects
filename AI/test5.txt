@@ -1,0 +1,11 @@
+Student Giuseppe Condorelli. UniCT, Computer Science.
+Test 1. Initial fact in the right hand side
+1) Rules
+B A
+Z C
+
+2) Facts
+A
+
+3) Goal
+Z
