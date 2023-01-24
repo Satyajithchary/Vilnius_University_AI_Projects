@@ -1,0 +1,125 @@
+call OPEN(Z):
+    print("1)GOAL Z. ")
+    mystack=[]
+    is Z a fact? NO, then
+        is Z in mystack? NO, then
+            mystack.insert(Z)
+            mystack=[Z]
+    iterate through rules
+    does R1 produce Z? YES, then
+    //here check if it's the first rule you're going through for z and set the checking value to 1
+        print(find R1: D,C->Z. New goals D,C)
+        newgoals=[D,C]
+        iterate through newgoals
+            call OPEN(D):
+                print(2)-GOAL D.)
+                mystack=[Z]
+                is D a fact? NO, then
+                    is D in mystack? NO, then
+                        mystack.insert(D,0)
+                        mystack=[D,Z]
+                iterate through rules
+                does R1 produce D? NO, next rule
+                does R2 produce D? YES, then
+                    print(find R2:C->D. New Goals C)
+                    newgoals=[C]
+                    iterate through newgoals[C]
+                        call OPEN(C)
+                            PRINT(" 3)--GOAL C.")
+                            mystack=[D,Z]
+                            is C a fact? NO, then
+                                is C in mystack? NO, then
+                                    mystack.insert(C,0)
+                                    mystack=[C,D,Z]
+                            iterate through rules
+                            does R1 produce C? NO, next rule
+                            does R2 produce C? NO, next rule
+                            does R3 produce C? YES, then
+                                print(find r3:B->C. New Goals B)
+                                newgoals=[B]
+                                iterate through newgoals
+                                    call OPEN(B)
+                                        PRINT(" 4)---GOAL B ")
+                                        mystack=[C,D,Z]
+                                        is B a fact? NO, then
+                                            is B in mystack? NO, then
+                                                mystack.insert(B,0)
+                                                mystack=[B,C,D,Z]
+                                        iterate through rules
+                                        does R1 produce B? NO, next rule
+                                        does R2 produce B? NO, next rule
+                                        does R3 produce B? NO, next rule
+                                        does R4 produce B? YES, then
+                                            print(find R4:D->B. New goals D)
+                                            newgoals=[D]
+                                            iterate through newgoals
+                                                call OPEN(D)
+                                                    print(" 5)----GOAL C ")
+                                                    mystack=[B,C,D,Z]
+                                                    is B a fact? NO, then
+                                                        is B in mystack?YES, then
+                                                            print(" CYCLE.")
+                                                            return false
+                                                CLOSE(D)
+                                            was call succesful? No, so don't pop element from newgoals 
+                                            no more newgoals to iterate through, then print(BACK)
+                                            is newgoals empty? NO, then
+                                                print ("FAIL \n")
+                                        does R5 produce B? NO, next rule
+                                        does R6 produce B? YES, then
+                                            is this the first rule we try for Z? no, then
+                                                PRINT(" 6) GOAL Z.) ")
+                                            print(" find R6: H->B. Newgoals H ")
+                                            newgoals=[H]
+                                            iterate through newgoals[H]
+                                                call OPEN(H)
+                                                    print( 7) GOAL H.)
+                                                    mystack = [B,C,D,Z]
+                                                    is H a fact? NO, then
+                                                        is H in mySTACK?NO, then
+                                                            mystack.insert(H,0)
+                                                            mystack=[H,B,C,D,Z]
+                                                    iterate through rules
+                                                    does R1 produce B? NO, next rule
+                                                    does R2 produce B? NO, next rule
+                                                    does R3 produce B? NO, next rule
+                                                    does R4 produce B? NO, next rule
+                                                    does R5 produce B? NO, next rule
+                                                    does R6 produce B? NO, next rule
+                                                    does R7 produce B? NO, next rule
+                                                    there are no more rules left
+                                                    has a rule ever been found?No, then
+                                                        PRINT(No Rules)
+                                                        mystack.remove(H), so now mystack=[B,C,D,Z]
+                                                        return false
+                                                        CLOSE(D)
+                                                was call succesful? No, then don't pop     
+                                            no more newgoals to iterate through, then print(BACK)
+                                            is newgoals empty? NO, then
+                                                print (FAIL)
+                                        does R7 produce B? NO, next rule
+                                        there are no more rules left
+                                        has a rule ever been found? YES, then
+                                            print(NO more rules)
+                                            mystack.remove(B), so now mystack=[C,D,Z]
+                                            return false
+                                            CLOSE(B)
+                                    was call succesful? NO, then don't pop element from newgoals
+                                    no more newgoals to iterate through, then print(BACK)
+                                    is newgoals empty? NO, then
+                                        print (FAIL)
+                            does R4 produce C?
+
+                                    
+                                        
+                                                
+                                            
+                                                    
+
+                                        
+
+
+
+                                                    
+                                            
+                            

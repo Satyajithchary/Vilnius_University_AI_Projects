@@ -1,0 +1,93 @@
+call OPEN(Z)
+    PRINT( "1) GOAL Z." )
+    mystack=[]
+    is Z a fact? NO, then
+        is Z in mystack? NO, then
+            mystack.insert(Z,0)
+            mystack=[Z]
+    iterate through rules
+    does R1 produce Z?  YES, then
+    //here check if it's the first rule you're going through for z and set the checking value to 1
+        print(Find R1:C,D->Z. New Goals C,D).
+        newgoals=[C,D]  //local variable
+        iterate through newgoals
+            call OPEN(C)
+                PRINT("2)-GOAL C")
+                mystack[Z]
+                is C a fact? NO, then
+                    is C in mystack? NO, then
+                        mystack.insert(C,0)
+                        mystack=[C,Z]
+                iterate through rules
+                does R1 produce C? No, next rule
+                does R2 produce C? YES, then
+                    print(Find R2:T->C. New goals T \n)
+                    newgoals[T]     //local variable
+                    iterate through newgoals[T]
+                        call OPEN(T)
+                            PRINT( "3)--GOAL T." )
+                            is T a fact? YES, then
+                                print("Fact (initial), as facts are T").
+                                return true
+                                CLOSE(T)
+                        was call successful? yes, then pop element from newgoals, so now newgoals is []
+                    no more newgoals to iterate through, then print (BACK)
+                    is newgoals empty? if yes, it means everything was fine
+                    is newgoals empty? YES, then
+                        print(", OK. \n")
+                        NEW_FACTS.insert(C,0)
+                    print(" 4)-GOAL C.")
+                    is C in NEW_FACTS? YES, then
+                        print(Fact (presently inferred). Facts T and C.)
+                        mystack.remove(C) so now mystack=[Z]
+                        return true
+                        CLOSE(C)
+            was call successful? yes, then pop element from newgoals, now newgoals is [D]
+            call OPEN(D)
+                PRINT( " 5)-GOAL D. ")
+                mystack=[Z]
+                is D a fact? NO, then
+                    is D in mystack? NO, then
+                        mystack.insert(D,0)
+                        mystack=[D,Z]
+                iterate through rules
+                does R1 produce D? No, next rule
+                does R2 produce D? No, next rule
+                does R3 produce D? No, next rule
+                there's no more rule left
+                has a rule ever been found?No, then
+                    PRINT(No Rules)
+                    return false
+                    mystack.remove(D), so now mystack=[Z]
+                    CLOSE(D)
+            was call succesful? no, then don't pop element from newgoals, newgoals=[D]
+        no more newgoals to iterate through, then print (BACK)
+        is newgoals empty? NO, then
+            print(" , FAIL. \n " )
+    does R2 produce Z? NO, next rule
+    does R3 produce Z? YES, then
+        is this the first rule we try for Z? no, then
+            PRINT(" 6) GOAL Z.) ")
+        print(Find R3:T->Z. New Goals T).
+        newgoals=[T]
+        iterate through newgoals
+            call OPEN(T)
+                print(" 7) -GOAL T. ")
+                is T a fact? YES, then
+                    print("Fact (initial), as facts are T").
+                    return true
+                    CLOSE(T)
+            was call successful? yes, then pop element from newgoals, so now newgoals is []
+        no more newgoals to iterate through, then print (BACK)
+        is newgoals empty? YES, then
+            print(", OK. \n")
+            NEW_FACTS.insert(Z,0)
+        print(" 8)-GOAL Z.")
+        is C in NEW_FACTS? YES, then
+            print(Fact (presently inferred). Facts T and Z.)
+            mystack.remove(Z) so now mystack=[]
+            if(mystack is empty):
+                print("Ok")
+            return true
+            CLOSE(Z)
+        

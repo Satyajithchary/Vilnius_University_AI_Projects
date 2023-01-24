@@ -1,0 +1,47 @@
+mystack=[]
+
+def OPEN(g):
+        PRINT( movecounter, ") GOAL", g)
+        movecounter++
+
+        alreadygonethroughrule=0
+
+        if g in facts:
+            print("Fact (initial), as facts are ", FACTS).
+            return true
+        if g in mystack:
+            print("Cycle. Back, Fail)
+            return false
+        
+        mystack.insert(g,0)
+
+        for rule in len(RULES):
+                if RHS[rule]==g:
+                    if alreadygonethroughrule==0:
+                            print (find ruleR, New Goals)
+                newgoals = LHS[rule]
+                for ng in newgoals:
+                    val = OPEN(ng)
+                    if ng==True
+                        newgoals.pop(o)
+                print(BACK)
+                if newgoals is empty:
+                        print(", OK. \n")
+                        NEW_FACTS.insert(C,0)
+                    print( movecounter, ") GOAL", g)
+                    movecounter++
+                    if g in NEW_FACTS:
+                        print (" presently inferred. Facts ", FACTS, "and", NEW_FACTS )
+                        mystack.remove(g)
+                        return true
+                else:
+                    print (Fail. \n)
+
+        if alreadygonethroughrule==0:
+            print(no rule)
+            mystack.remove(g)
+            return false
+        if alreadygonethroughrule==1:
+            print(no more rules, back, fail)
+            mystack.remove(g)
+            return false

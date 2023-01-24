@@ -1,0 +1,17 @@
+Alessio Cremonesi. Vilnius University, Erasmus.
+Test 1. Initial fact in the right hand side
+1) Rules
+B F 		// R1: E -> G. Comments.
+G E 		// R2: F -> B
+Z D 		// R3: G -> Z
+D C 		// R4: A -> G
+C B 		// R5: A -> B
+B A		// R6: B -> C
+G A		// R7: C -> D
+Z G		// R8: D -> Z
+
+2) Facts
+A
+
+3) Goal
+Z
