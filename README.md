@@ -5,12 +5,12 @@ Dive into a vibrant collection of coding assignments from the Artificial Intelli
 ## Project Overview 📚🚀
 
 ### Forward Chaining 🔄
-- **Directory:** [Forward Chaining](Directory)
+- **Directory:** [Forward Chaining](https://github.com/Satyajithchary/Vilnius_University_AI_Projects/tree/main/AI/Forward%20Chaining)
 - **File:** `forwardChaining.py`
 - **Test Cases:** Immerse yourself in the intricacies of forward chaining with a set of 10 captivating test cases (`test1.txt` to `test10.txt`).
 
 ### Backward Chaining 🔙
-- **Directory:** [Backward Chaining](Directory)
+- **Directory:** [Backward Chaining](https://github.com/Satyajithchary/Vilnius_University_AI_Projects/tree/main/AI/Backward%20Chaining)
 - **File:** `backwardChaining.py`
 - **Test Cases:** Explore the subtleties of backward chaining through a set of 6 insightful test cases (`test1.txt` to `test6.txt`).
 
